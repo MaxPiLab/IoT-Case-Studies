@@ -5,7 +5,7 @@ Arduino is an open-source electronics platform based on hardware (single-board m
 Generally, arduino-boards are Atmel 8-bit AVR microcontroller based (some like____ are microprocessor based). Arduino-boards have facillity of **analog and digital I/O pins** making it able to interact with the physical world. This is acheived by sending instruction to arduino-boards. This is done with Arduino programming language (typically like C nad C++) and Ardino software (**IDE**).  
 
 <p align="center"> 
-<img src="">
+<img src="https://user-images.githubusercontent.com/35935951/37903485-bc8891c6-3115-11e8-8074-6a7041c03da9.jpg">
 </p>
 
 ## why to choose Arduino??

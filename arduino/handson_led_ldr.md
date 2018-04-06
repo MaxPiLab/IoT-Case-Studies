@@ -22,22 +22,7 @@ There are many appliactions you can use with Arduino.
 
 ## Arduino and LED
 
-### Hands-on with Arduino and LED (LED Blinking)
 
-Here, we are going to make the on-board LED blink. We are using the built-in LED that most Arduino-boards have. This LED is connected to a digital pin (its number may vary from board type to board type, in case of Arduino UNO it's 9). We have a constant that is specified in every board descriptor file. This constant is LED_BUILTIN which allows you to control the built-in LED easily.  
-
-#### Hardware Required
-
-**1.)** Arduino-board(UNO)  
-**2.)** LED  
-**3.)** 220-ohm resistor  
-**4.)** Jumper wires  
-
-#### Circuit Diagram
-
-<p align="center"> 
-<img src="https://user-images.githubusercontent.com/35935951/37853012-da00ea08-2f0a-11e8-9a6a-4d96ce73a96f.png">
-</p>
 
 #### Code
 

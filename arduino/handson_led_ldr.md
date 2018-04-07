@@ -79,7 +79,7 @@ int initial_position = 90;   //Declaring the initial position at 90
 int LDR1 = A0;               //Pin at which LDR is connected  
 int LDR2 = A1;               //Pin at which LDR is connected  
 int error = 5;               //initializing variable for error  
-int servopin=9;  
+int servopin=9;  //
 
 void setup()  
 {   

@@ -23,8 +23,9 @@ Arduino IDE
 Basic principal of ultrasonic distance measurement is based on ECHO. When sound waves are transmitted in environment then they return back to the origin as ECHO after striking on any obstacle. When a short ultrasonic pulse is transmitted from a height to the tank containing water then it's transmitted back from liquild level as ultrasonic pulse experiences change in density(ultrasonic pulse first travel through air and bounce of liquid with higher density than air), then travel time of that pulse from transceiver to liquid and back to transceiver is measured.  
 
 <p align="center"> 
-<img src=https://user-images.githubusercontent.com/35935951/39046500-0888c242-44b4-11e8-82d1-153258414e31.jpg">
+<img src="https://user-images.githubusercontent.com/35935951/39046703-ad3631bc-44b4-11e8-9bb6-fcd7eb814fb4.jpg">
 </p>
+          
 
 **NOTE** * Place ultersonic sensor at certain distance from maximum water level.  
          * Tank diameter should not be too small.  

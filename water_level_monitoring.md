@@ -32,5 +32,5 @@ Basic principal of ultrasonic distance measurement is based on ECHO. When sound 
 ## Future Work
 
 **1.** Knowing the status of the water source( whether water is present at source or not)  
-**2.** This  IoT  based  proposed  system  is  used  to  acquire  water  level  details  of  a  water source  in  real  time from any  location,  any device  connected  to Internet. 
+**2.** This  IoT  based  proposed  system  is  used  to  acquire  water  level  details  of  a  water source  in  real  time from any  location,  any device  connected  to Internet.  
 

@@ -75,18 +75,18 @@ Next, in the SSH shell, download the AWS IoT Device SDK for C in a tarball (linu
 
 Move the tarbell into `/opt/devicesdk` and extract it:  
 
-`mkdir /opt/devicesdk  
+```mkdir /opt/devicesdk  
  mv linux_mqtt_openssl-latest.tar /opt/devicesdk  
  cd /opt/devicesdk  
  tar -xvf linux_mqtt_openssl-latest.tar  
- `  
+```  
 Move the certificates and key pair into `/opt/devicesdk/certs`:
 
-`mv /home/pi/privkey.pem /opt/devicesdk  
+```mv /home/pi/privkey.pem /opt/devicesdk  
  mv /home/pi/pubkey.pem /opt/devicesdk  
  mv /home/pi/crt.crt /opt/devicesdk  
  mv /home/pi/ca.pem /opt/devicesdk  
- `  
+```  
 Before you can use the AWS IoT Embedded C SDK, you must install the OpenSSL library on Raspberry Pi:  
 
 `sudo apt-get install -y libssl-dev`  
@@ -100,14 +100,14 @@ Navigate to `/opt/devicesdk/sample_apps/shadow_sample` and edit the `aws_iot_con
  `  
 Providing the following information:  
 
-`#define AWS_IOT_MQTT_HOST “ENDPOINT.iot.us-east-1.amazonaws.com”  
+```#define AWS_IOT_MQTT_HOST “ENDPOINT.iot.us-east-1.amazonaws.com”  
  #define AWS_IOT_MQTT_PORT 8883  
  #define AWS_IOT_MQTT_CLIENT_ID “THING NAME”  
  #define AWS_IOT_MY_THING_NAME “THING NAME”  
  #define AWS_IOT_ROOT_CA_FILENAME “ca.pem”  
  #define AWS_IOT_CERTIFICATE_FILENAME “cert.crt”  
  #define AWS_IOT_PRIVATE_KEY_FILENAME “privkey.pem”  
- `  
+```  
  
 Supply the endpoint you gathered in the first part of this tutorial, when interacting with AWS IoT via the AWS CLI. If you need to get it again, use the AWS CLI:  
 
@@ -128,12 +128,4 @@ This will produce an executable called `shadow_sample`, which you can run:
 `./shadow_sample`  
 
 You should be able to log into the AWS management console, open the IoT service and see entries being written by your device. It should look something like this:  
-
-
-
-
-
-
-
-
 

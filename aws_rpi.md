@@ -58,8 +58,7 @@ Use Secure Copy `(scp)` to move the keys and certificates to your device:
 `scp privkey.pem pi@raspberrypi.local:/home/pi  
 scp pubkey.pem pi@raspberrypi.local:/home/pi  
 scp crt.crt pi@raspberrypi.local:/home/pi  
-scp ca.pem pi@raspberrypi.local:/home/pi  
- `
+scp ca.pem pi@raspberrypi.local:/home/pi`
  
  **NOTE: The default password for the default `pi` user in Raspbian is `raspberry`.**  
 

@@ -45,5 +45,95 @@ A thing represents a device whose status or data is stored in the AWS Cloud. Thi
 
 14. In the Attach things to certificate(s) dialog box, select the check box next to the thing you created to represent your Raspberry Pi, and then choose Attach.  
 
+The AWS IoT Device SDK helps you to connect devices to AWS IoT. It provides features so that devices can seamlessly and securely work with the Device Gateway and Device Shadow provided by AWS IoT.
+
+## Installing the AWS IoT Device SDK and Building a Sample Application
+
+Installing the AWS IoT Device SDK and building a sample application consists of a few steps. One must:  
+
+### 1. Upload Certificates and a key pair to the device.  
+
+Use Secure Copy `(scp)` to move the keys and certificates to your device:  
+
+`scp privkey.pem pi@raspberrypi.local:/home/pi  
+ scp pubkey.pem pi@raspberrypi.local:/home/pi  
+ scp crt.crt pi@raspberrypi.local:/home/pi  
+ scp ca.pem pi@raspberrypi.local:/home/pi  
+ `
+ 
+ **NOTE: The default password for the default `pi` user in Raspbian is `raspberry`.**  
+
+### 2. Download the AWS IoT SDK onto the device and install it.  
+
+Open a Secure Shell `(ssh)` with the Raspberry Pi:  
+
+`ssh pi@raspberrypi.local`  
+
+Next, in the SSH shell, download the AWS IoT Device SDK for C in a tarball (linux_mqtt_openssl-latest.tar). Save it in your deviceSDK directory.  
+
+`wget https://s3.amazonaws.com/aws-iot-device-sdk-embedded-c/linux_mqtt_openssl-latest.tar`  
+
+Move the tarbell into `/opt/devicesdk` and extract it:  
+
+`mkdir /opt/devicesdk  
+ mv linux_mqtt_openssl-latest.tar /opt/devicesdk  
+ cd /opt/devicesdk  
+ tar -xvf linux_mqtt_openssl-latest.tar  
+ `  
+Move the certificates and key pair into `/opt/devicesdk/certs`:
+
+`mv /home/pi/privkey.pem /opt/devicesdk  
+ mv /home/pi/pubkey.pem /opt/devicesdk  
+ mv /home/pi/crt.crt /opt/devicesdk  
+ mv /home/pi/ca.pem /opt/devicesdk  
+ `  
+Before you can use the AWS IoT Embedded C SDK, you must install the OpenSSL library on Raspberry Pi:  
+
+`sudo apt-get install -y libssl-dev`  
+
+### 3. Configure the sample application with the needed AWS IoT variables.  
+
+Navigate to `/opt/devicesdk/sample_apps/shadow_sample` and edit the `aws_iot_config.h`, using an editor that is installed on Raspbian by default, such as `nano`:  
+
+`cd /opt/devicesdk/sample_apps/shadow_sample
+ nano aws_iot_config.h
+ `  
+Providing the following information:  
+
+`#define AWS_IOT_MQTT_HOST “ENDPOINT.iot.us-east-1.amazonaws.com”  
+ #define AWS_IOT_MQTT_PORT 8883  
+ #define AWS_IOT_MQTT_CLIENT_ID “THING NAME”  
+ #define AWS_IOT_MY_THING_NAME “THING NAME”  
+ #define AWS_IOT_ROOT_CA_FILENAME “ca.pem”  
+ #define AWS_IOT_CERTIFICATE_FILENAME “cert.crt”  
+ #define AWS_IOT_PRIVATE_KEY_FILENAME “privkey.pem”  
+ `  
+ 
+Supply the endpoint you gathered in the first part of this tutorial, when interacting with AWS IoT via the AWS CLI. If you need to get it again, use the AWS CLI:  
+
+`aws iot describe_endpoint`  
+
+The file names for `AWS_IOT_ROOT_CA_FILENAME`, `AWS_IOT_CERTIFICATE_FILENAME`, and `AWS_IOT_PRIVATE_KEY_FILENAME` should not contain paths, but should be bare file names instead. The specific values to provide may be different from this example.  
+
+Save the file and exit the editor.  
+
+### 4. Compile and run the sample application.  
+
+Compile the example and run:  
+
+`make -f Makefile`  
+
+This will produce an executable called `shadow_sample`, which you can run:  
+
+`./shadow_sample`  
+
+You should be able to log into the AWS management console, open the IoT service and see entries being written by your device. It should look something like this:  
+
+
+
+
+
+
+
 
 

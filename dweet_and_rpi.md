@@ -22,8 +22,8 @@ Here are some features of dweet service
 1. The name of things chosen by you must be unique.  
 
    * There should not be any existing thing on dweet.io with the same name.  
-	 * One way to ensure this uniqueness is choose as random a name as possible.  
-	 * The other way is to let dweet.io choose the name for you.  
+   * One way to ensure this uniqueness is choose as random a name as possible.  
+   * The other way is to let dweet.io choose the name for you.  
    
 2. Data is stored on dweet.io only up to last 5 dweets for up to 24 hours only.  
 
@@ -32,7 +32,7 @@ Here are some features of dweet service
 3. The data you post on dweet.io is by default public.  
 
   * This means that anyone with the thing name can see your data in real time.  
-	* Moreover all the public things are listed on dweet.io website itself for anyone to see. (https://dweet.io/see)  
+  * Moreover all the public things are listed on dweet.io website itself for anyone to see. (https://dweet.io/see)  
 
 The only way to reserve a specific thing name and hide your data from public is to lock your thing and not surprising but you have to pay for that. With paid things, data is stored on dweet.io for up to 30 days.  
 
@@ -49,14 +49,14 @@ The only way to reserve a specific thing name and hide your data from public is 
    ```sudo pip install requests```  
     
 2. File -  "send_dummy_dweet.py"- Just sends some dummy data to dweet.io.  
-   * Add a random unique name for your thing (See code for the line to change)  
+         * Add a random unique name for your thing (See code for the line to change)  
 	 * Visualize data on dweet.io  
 	 * Create a dashboard from dweet.io using button 'Create free dashboard'  
 	 * Import dashboard - Select file "dummy_dashboard.json "  
 
 3. Make sure the code in file hcsr04.py (in same directory) is working for your hardware.  
 4. File - "send_sensors_dweet.py" - Sends ultrasonic sensor data to dweet.io  
-   * Create a dashboard from dweet.io  
+         * Create a dashboard from dweet.io  
 	 * Visualize data on dweet.io  
 	 * Create a dashboard from dweet.io using button 'Create free dashboard'  
 	 * Import dashboard - not available for this example. Customize your own dashboard.  

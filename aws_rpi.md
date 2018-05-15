@@ -4,8 +4,9 @@
 
 ## What is AWS?
 
+AWS(Amazon Web Service) IoT is a managed cloud platform that lets connected devices easily and securely interact with cloud applications and other devices. AWS IoT can support billions of devices and trillions of messages, and can process and route those messages to AWS endpoints and to other devices reliably and securely.
 
-## 
+## Setting up AWS 
 
 1. Turn on your Raspberry Pi and confirm you have an Internet connection.  
 
